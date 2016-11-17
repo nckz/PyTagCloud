@@ -20,24 +20,24 @@ pygame.init()
 if __name__ == '__main__':    
     
     
-    for x in xrange(10):
+    for x in range(10):
         fsize = 50 + 10 * x
         thefont = font.Font(os.path.join(FONT_DIR, "cantarell-regular-webfont.ttf"), fsize)
 
-        print "Lineheight", thefont.get_linesize()
-        print "Size", fsize
-        print "Ascent", thefont.get_ascent()
-        print "Descent", thefont.get_descent()
-        print "Diff", thefont.get_linesize() - (thefont.get_ascent() + abs(thefont.get_descent()))
+        print("Lineheight", thefont.get_linesize())
+        print("Size", fsize)
+        print("Ascent", thefont.get_ascent())
+        print("Descent", thefont.get_descent())
+        print("Diff", thefont.get_linesize() - (thefont.get_ascent() + abs(thefont.get_descent())))
         text = thefont.render("Cooer", True, (0,0,0))
-        print "Text h", text.get_bounding_rect()
-        print ""
+        print("Text h", text.get_bounding_rect())
+        print("")
 
     metrics =  thefont.metrics("Cooer")
     
-    print min([f[2] for f in metrics])
-    print max([f[3] for f in metrics])
-    print metrics[0]
+    print(min([f[2] for f in metrics]))
+    print(max([f[3] for f in metrics]))
+    print(metrics[0])
     
     screen = pygame.display.set_mode((800, 600))
     pygame.display.set_caption("PyTagCloud Font Alignment")    
